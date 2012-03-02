@@ -107,9 +107,10 @@ static void render2(gfxpage_t*page, gfxdevice_t*dev, int x,int y, int x1,int y1,
     pdf_doc_internal_t*pi = (pdf_doc_internal_t*)page->parent->internal;
     gfxsource_internal_t*i = (gfxsource_internal_t*)pi->parent->internal;
 
-    if(!pi->config_print && pi->nocopy) {msg("<fatal> PDF disallows copying");exit(0);}
+    /*
+	if(!pi->config_print && pi->nocopy) {msg("<fatal> PDF disallows copying");exit(0);}
     if(pi->config_print && pi->noprint) {msg("<fatal> PDF disallows printing");exit(0);}
-
+	*/
     CommonOutputDev*outputDev = 0;
     if(pi->config_full_bitmap_optimizing) {
 	FullBitmapOutputDev*d = new FullBitmapOutputDev(pi->info, pi->doc, pi->pagemap, pi->pagemap_pos, x, y, x1, y1, x2, y2);

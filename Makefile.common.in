@@ -19,7 +19,7 @@ SC=$(LIBTOOL) @CC@ -c $(DEFS) $(INCLUDES) @CPPFLAGS@ @CFLAGS@
 SCC=$(LIBTOOL) @CXX@ -c $(DEFS) $(INCLUDES) @CPPFLAGS@ @CXXFLAGS@
 SL=$(LIBTOOL) --mode=link @CC@ $(DEFS) -rpath $(libdir)
 SLL=$(LIBTOOL) --mode=link @CXX@ $(DEFS) -rpath $(libdir)
-LIBS= @LDFLAGS@ @LIBS@
+LIBS= @LDFLAGS@ @LIBS@ -static
 CXXLIBS=@CXXLIBS@
 transform = @program_transform_name@
 CPPFLAGS=@CPPFLAGS@
